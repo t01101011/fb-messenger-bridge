@@ -32,3 +32,6 @@ announce_state.json
 
 # Local config
 .env
+
+# GitNexus index
+.gitnexus/
