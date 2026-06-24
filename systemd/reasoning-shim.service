@@ -1,0 +1,20 @@
+[Unit]
+Description=Reasoning shim for OpenAI-compatible local model server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/fb-messenger-bridge
+EnvironmentFile=-/opt/fb-messenger-bridge/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 -u /opt/fb-messenger-bridge/reasoning_shim.py
+Restart=always
+RestartSec=10
+StartLimitIntervalSec=300
+StartLimitBurst=5
+StandardOutput=append:/opt/fb-messenger-bridge/shim.log
+StandardError=append:/opt/fb-messenger-bridge/shim.log
+
+[Install]
+WantedBy=multi-user.target

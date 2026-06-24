@@ -1,0 +1,34 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime logs
+*.log
+service.log
+bridge.log
+shim.log
+debug.log
+
+# Facebook auth / private runtime state
+cookies.json
+cookies.json.*
+sessions.json
+sessions.json.*
+people.json
+people.json.*
+thread_members.json
+thread_members.json.*
+group_notes.json
+group_notes.json.*
+allowed_threads.json
+allowed_threads.*.json
+outbox.json
+announce_state.json
+*.bak*
+*.dead*
+*.tmp
+
+# Local config
+.env
